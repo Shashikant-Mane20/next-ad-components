@@ -6,6 +6,7 @@ import HoverEffectSlider from "@/components/frontend/InfiniteSlider3";
 import ImageCollage from "@/components/frontend/ImageCollage";
 import CustomImageCollage from "@/components/frontend/ImageCollage2";
 import RefinedImageCollage from "@/components/frontend/ImageCollage";
+import BannerWithBrochure from "@/components/frontend/BannerWithBrochure";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,11 +29,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        
         <InfiniteSlider/>
+        <BannerWithBrochure/>
         <SimpleSlider/>
         <HoverEffectSlider/>
         <RefinedImageCollage/>
         <CustomImageCollage/>
+       
         {children}
       </body>
     </html>

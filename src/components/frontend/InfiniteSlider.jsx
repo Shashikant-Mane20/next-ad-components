@@ -45,10 +45,10 @@ const sliderData = [
 
 export default function SimpleSlider() {
   return (
-    <div className="w-full bg-white py-8 px-4 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
-      <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-6 lg:mb-8">Our Team</h1>
+    <div className="w-full bg-white py-16 px-4 lg:py-20">
+      <h1 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-8">Our Team</h1>
       <Swiper
-        spaceBetween={16}
+        spaceBetween={16} // Swiper's internal spacing set to a small number
         slidesPerView={1}
         centeredSlides={false}
         loop={true}
@@ -57,27 +57,29 @@ export default function SimpleSlider() {
           disableOnInteraction: false,
         }}
         breakpoints={{
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
+          640: { slidesPerView: 2 }, // Showing 2 cards on small screens
+          768: { slidesPerView: 3 }, // Showing 3 cards on tablets
+          1024: { slidesPerView: 5 }, // Showing 5 cards on large screens
         }}
         modules={[Autoplay]}
-        className="w-full max-w-7xl mx-auto"
+        className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        {sliderData.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            <div className="flex flex-col items-center justify-center p-4 sm:p-6 rounded-xl bg-blue-950 shadow-lg h-[300px] sm:h-[320px] lg:h-[350px] max-w-[240px] mx-auto">
-              <img
-                src={slide.img}
-                alt={slide.name}
-                className="w-20 sm:w-24 lg:w-28 h-20 sm:h-24 lg:h-28 rounded-full border-4 border-indigo-500 mb-4 object-cover"
-              />
-              <h2 className="text-sm sm:text-lg font-semibold text-white mb-2 text-center">{slide.name}</h2>
-              <div className="w-10 sm:w-12 h-[2px] bg-indigo-500 mb-3"></div>
-              <p className="text-xs sm:text-sm text-gray-400 text-center">{slide.text}</p>
-            </div>
-          </SwiperSlide>
-        ))}
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"> {/* Tailwind gap between cards */}
+          {sliderData.map((slide) => (
+            <SwiperSlide key={slide.id}>
+              <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-blue-950 shadow-2xl h-[350px] w-[245px]">
+                <img
+                  src={slide.img}
+                  alt={slide.name}
+                  className="w-28 h-28 rounded-full border-4 border-indigo-500 mb-4 object-cover"
+                />
+                <h2 className="text-lg font-semibold text-white mb-2">{slide.name}</h2>
+                <div className="w-12 h-[2px] bg-indigo-500 mb-3"></div>
+                <p className="text-sm text-gray-600 text-center">{slide.text}</p>
+              </div>
+            </SwiperSlide>
+          ))}
+        </div>
       </Swiper>
     </div>
   );
