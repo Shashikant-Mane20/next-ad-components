@@ -49,7 +49,7 @@ export default function CustomImageCollage() {
               <div className="h-full w-full flex items-center justify-center text-center p-4 relative">
                 {/* On hover, the background image will appear with opacity */}
                 <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 group-hover:opacity-80 transition-opacity duration-300"
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{
                     backgroundImage: `url(${image.url})`,
                   }}

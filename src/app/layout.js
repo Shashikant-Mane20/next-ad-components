@@ -7,6 +7,9 @@ import ImageCollage from "@/components/frontend/ImageCollage";
 import CustomImageCollage from "@/components/frontend/ImageCollage2";
 import RefinedImageCollage from "@/components/frontend/ImageCollage";
 import BannerWithBrochure from "@/components/frontend/BannerWithBrochure";
+import DynamicGridComponent from "@/components/frontend/DyanamicGridComponent";
+import ImageHoverComponent from "@/components/frontend/ImageHoverComponent";
+import PastRecruiters from "@/components/frontend/PastRecruiters";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +39,9 @@ export default function RootLayout({ children }) {
         <HoverEffectSlider/>
         <RefinedImageCollage/>
         <CustomImageCollage/>
-       
+       <DynamicGridComponent/>
+       <ImageHoverComponent/>
+       <PastRecruiters/>
         {children}
       </body>
     </html>

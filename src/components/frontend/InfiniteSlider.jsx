@@ -57,14 +57,14 @@ export default function SimpleSlider() {
           disableOnInteraction: false,
         }}
         breakpoints={{
-          640: { slidesPerView: 2 }, // Showing 2 cards on small screens
-          768: { slidesPerView: 3 }, // Showing 3 cards on tablets
-          1024: { slidesPerView: 5 }, // Showing 5 cards on large screens
+          640: { slidesPerView: 2 }, 
+          768: { slidesPerView: 3 }, 
+          1024: { slidesPerView: 5 }, 
         }}
         modules={[Autoplay]}
         className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"> {/* Tailwind gap between cards */}
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"> 
           {sliderData.map((slide) => (
             <SwiperSlide key={slide.id}>
               <div className="flex flex-col items-center justify-center p-6 rounded-xl bg-blue-950 shadow-2xl h-[350px] w-[245px]">
@@ -84,3 +84,4 @@ export default function SimpleSlider() {
     </div>
   );
 }
+
