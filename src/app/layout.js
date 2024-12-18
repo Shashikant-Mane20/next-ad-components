@@ -10,6 +10,7 @@ import BannerWithBrochure from "@/components/frontend/BannerWithBrochure";
 import DynamicGridComponent from "@/components/frontend/DyanamicGridComponent";
 import ImageHoverComponent from "@/components/frontend/ImageHoverComponent";
 import PastRecruiters from "@/components/frontend/PastRecruiters";
+import OurLeadership from "@/components/frontend/OurLeadership";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
        <DynamicGridComponent/>
        <ImageHoverComponent/>
        <PastRecruiters/>
+       <OurLeadership/>
         {children}
       </body>
     </html>
